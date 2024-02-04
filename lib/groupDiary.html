@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome cdn link-->
+    <link rel="icon" href="/img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="lib/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--custom css-->
+    <link rel="stylesheet" href="/style.css">
+    <title>Gruop-03-CuoiKi</title>
+</head>
+
+<body>
+
+    <!--header start!-->
+    <header class="header" id="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbars">
+            <a href="/index.html">TRANG CHỦ</a>
+            <a href="/lib/technical.html">Technical</a>
+            <a href="/lib/About.html">About</a>
+            <a href="/lib/groupDiary.html">Group Diary</a>
+            <a href="/lib/project.html">Project</a>
+            <a href="result.html">Result</a>
+            <a href="/lib/Style Guide.html">Style Guide</a>
+            <a href="https://phumaihoang77.github.io/Group03/">Go TO PROJECT</a>
+
+
+        </nav>
+    </header>
+    <!--header end!-->
+    <main>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid #ddd;
+            }
+
+            th,
+            td {
+                padding: 12px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            .week-selector {
+                margin-bottom: 20px;
+            }
+
+            .week-selector button {
+                padding: 10px;
+                cursor: pointer;
+            }
+        </style>
+
+
+        <body>
+
+            <div class="week-selector" style="margin-top: 100px;margin-bottom: 30px;">
+                <!-- Thêm nút cho 10 tuần -->
+                <!-- Bạn cũng có thể sử dụng vòng lặp để tạo các nút này tự động -->
+                <button onclick="showWeek(1)">Tuần 1</button>
+                <button onclick="showWeek(2)">Tuần 2</button>
+                <button onclick="showWeek(3)">Tuần 3</button>
+                <button onclick="showWeek(4)">Tuần 4</button>
+                <button onclick="showWeek(5)">Tuần 5</button>
+                <button onclick="showWeek(6)">Tuần 6</button>
+                <button onclick="showWeek(7)">Tuần 7</button>
+                <button onclick="showWeek(8)">Tuần 8</button>
+                <button onclick="showWeek(9)">Tuần 9</button>
+                <button onclick="showWeek(10)">Tuần 10</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>MSSV</th>
+                        <th>Họ Tên</th>
+                        <th>Công Việc Được Giao</th>
+                        <th>Kết Quả</th>
+                        <th>Tiến Độ</th>
+                    </tr>
+                </thead>
+                <tbody id="weekData">
+                    <!-- Thêm dữ liệu cho 10 tuần -->
+                </tbody>
+            </table>
+
+            <script>
+                var data = {
+                    1: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '10%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '10%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '10%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '10%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '10%'
+                    }
+                        // Thêm dữ liệu cho tuần 1 tại đây
+                    ],
+                    2: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '10%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '20%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '20%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '20%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '20%'
+                    }
+
+                        // Thêm dữ liệu cho tuần 2 tại đây
+                    ],
+                    3: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '30%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '30%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '30%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '30%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '30%'
+                    },],
+                    4: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '40%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '40%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '40%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '40%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '40%'
+                    },],
+                    5: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '50%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '50%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '50%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '50%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '50%'
+                    }
+                        // Thêm dữ liệu cho tuần 5 tại đây
+                    ],
+                    6: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '60%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '60%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '60%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '60%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '60%'
+                    }
+                        // Thêm dữ liệu cho tuần 6 tại đây
+                    ],
+                    7: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '70%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '70%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '70%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '70%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '70%'
+                    }
+                        // Thêm dữ liệu cho tuần 7 tại đây
+                    ],
+                    8: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '80%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '80%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '80%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '80%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '80%'
+                    }
+                        // Thêm dữ liệu cho tuần 8 tại đây
+                    ],
+                    9: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '90%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '90%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '90%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '90%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đang tiến hành',
+                        tienDo: '90%'
+                    }
+                        // Thêm dữ liệu cho tuần 9 tại đây
+                    ],
+                    10: [{
+                        stt: 1,
+                        mssv: '22130214',
+                        hoTen: 'Mai Hoàng Phú',
+                        congViec: 'Thiết kế Trang giới thiệu',
+                        ketQua: 'Đã hoàn thành',
+                        tienDo: '100%'
+                    }, {
+                        stt: 2,
+                        mssv: '22130174',
+                        hoTen: 'Nguyễn Hữu Nam',
+                        congViec: 'Thiết kế Trang chủ',
+                        ketQua: 'Đã hoàn thành',
+                        tienDo: '100%'
+                    }, {
+                        stt: 3,
+                        mssv: '22130086',
+                        hoTen: 'Lê Đức Hoàng',
+                        congViec: 'Thiết kế Trang tin tức',
+                        ketQua: 'Đã hoàn thành',
+                        tienDo: '100%'
+                    }, {
+                        stt: 4,
+                        mssv: '22130230',
+                        hoTen: 'Trần Ngọc Quang',
+                        congViec: 'Thiết kế Trang Sản Phẩm',
+                        ketQua: 'Đã hoàn thành',
+                        tienDo: '100%'
+                    }, {
+                        stt: 5,
+                        mssv: '22130326',
+                        hoTen: 'Phạm Vũ Tiến VInh ',
+                        congViec: 'Thiết kế Trang đăng nhập',
+                        ketQua: 'Đã hoàn thành',
+                        tienDo: '100%'
+                    }
+                        // Thêm dữ liệu cho tuần 10 tại đây
+                    ],
+                };
+
+                function showWeek(weekNumber) {
+                    var weekDataHTML = '';
+                    var weekData = data[weekNumber];
+
+                    if (weekData) {
+                        for (var i = 0; i < weekData.length; i++) {
+                            weekDataHTML += '<tr>';
+                            weekDataHTML += '<td>' + weekData[i].stt + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].mssv + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].hoTen + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].congViec + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].ketQua + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].tienDo + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].tienDo + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].tienDo + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].tienDo + '</td>';
+                            weekDataHTML += '<td>' + weekData[i].tienDo + '</td>';
+                            weekDataHTML += '</tr>';
+                        }
+                    }
+
+                    document.getElementById('weekData').innerHTML = weekDataHTML;
+                }
+            </script>
+
+            <a href="#" class="backtop show" title="Lên đầu trang">
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="angle-up" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-angle-up fa-w-10">
+                    <path fill="currentColor"
+                        d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z"
+                        class=""></path>
+                </svg>
+            </a>
+
+            <!--footer start!-->
+            <footer class="text-center text-lg-start text-white" style="background-color: #434343 ;">
+                <section class="d-flex justify-content-between p-4" style="background-color: #0f0f0f">
+                    <div class="me-5">
+                        <span>KẾT NỐI VỚI CHÚNG TÔI TRÊN MẠNG XÃ HỘI:</span>
+                    </div>
+
+                    <div>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </section>
+
+
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                    © 2023 Copyright:
+                    <a class="text-white" href="index.html">Group03</a>
+                </div>
+            </footer>
+            <!--footer end!-->
+        </body>
+
+</html>

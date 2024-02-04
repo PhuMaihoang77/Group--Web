@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+.nav-item a {
+    padding-right: 100px;
+    white-space: nowrap;
+    padding-bottom: 25px;
+
+}
+
+/* .nav-link a :hover {
+    color: brown;
+} */
+
+.container {
+    display: flex;
+}
+
+.col h3 {
+    font-size: 20px;
+}
+
+.border {
+    margin-top: 30px;
+}
+
+.border p {
+    border: 10px;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+}
+
+.Hea {
+    background-color: rgb(222, 39, 39);
+
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.Color {
+    display: flex;
+}
+
+.cl1 {
+    border: 10px;
+    padding: 40px 20px;
+    background-color: #152604;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.cl2 {
+    border: 10px;
+    padding: 40px 20px;
+    background-color: #0F0F0F;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.cl3 {
+    border: 10px;
+    padding: 40px 20px;
+    background-color: #434343;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.cl4 {
+    border: 10px;
+    padding: 40px 20px;
+    background-color: #152604;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.cl5 {
+    border: 10px;
+    padding: 40px 20px;
+    background-color: #C4FB72;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.cl6 {
+    border: 10px;
+    padding: 40px 20px;
+    background-color: #434343;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.avt {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: red;
+    align-items: center;
+}
+
+.avt p {
+    align-items: center;
+    line-height: 80px;
+    margin-left: 10px;
+}
+
+.Ab {
+    border: 10px;
+    height: 140px;
+    width: 90px;
+    padding: 10px;
+    background-color: red;
+}
+
+.avt1 {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(36, 185, 36);
+    align-items: center;
+}
+
+.avt1 p {
+    align-items: center;
+    line-height: 80px;
+    margin-left: 10px;
+}
+
+.Ab1 {
+    border: 10px;
+    height: 140px;
+    width: 90px;
+    padding: 10px;
+    background-color: rgb(36, 185, 36);
+}
+
+.Bt {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.Bt1 {
+    padding: 5px;
+}
+
+
+
+.img {
+    display: flex;
+    height: 300px;
+    width: 100px;
+}
